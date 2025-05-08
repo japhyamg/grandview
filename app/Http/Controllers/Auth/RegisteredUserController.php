@@ -45,10 +45,10 @@ class RegisteredUserController extends Controller
 
         Auth::login($user);
         $dashboard = match ($user->role) {
-            'admin' => route('admin.dashboard'),
-            'user' => route('user.dashboard')
+            'admin' => route('admin.dashboard', absolute: false),
+            'user' => route('user.dashboard', absolute: false)
         };
 
-        return redirect()->intended(route($dashboard, absolute: false));
+        return redirect()->intended($dashboard);
     }
 }

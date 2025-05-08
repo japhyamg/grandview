@@ -21,7 +21,8 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'role'
+        'role',
+        'department_id'
     ];
 
     /**
@@ -45,5 +46,20 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    public function department()
+    {
+        return $this->belongsTo(Department::class);
+    }
+
+    public function kpis()
+    {
+        return $this->hasMany(KPI::class);
+    }
+
+    public function performanceReports()
+    {
+        return $this->hasMany(PerformanceReport::class);
     }
 }

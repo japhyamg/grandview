@@ -9,7 +9,20 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
-                    {{ __("You're logged in!") }}
+                    <div class="grid auto-cols-auto grid-flow-col">
+                        <div class="mr-3 block flex justify-between rounded-lg bg-white p-6 text-surface shadow-secondary-1 dark:bg-surface-dark text-black">
+                            <div>
+                                <h5 class="mb-2 text-xl font-medium leading-tight">{{ $kpis }}</h5>
+                                <p class="mb-4 text-base">KPIs</p>
+                            </div>
+                        </div>
+                        <div class="mr-3 block flex justify-between rounded-lg bg-white p-6 text-surface shadow-secondary-1 dark:bg-surface-dark text-black">
+                            <div>
+                                <h5 class="mb-2 text-xl font-medium leading-tight">{{ $reportCount }}</h5>
+                                <p class="mb-4 text-base">Reports</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

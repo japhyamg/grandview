@@ -23,11 +23,30 @@
                     @endif
                 </div>
 
-                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('admin.departments.index')" :active="request()->routeIs('admin.departments.*')">
-                        {{ __('Departments') }}
-                    </x-nav-link>
-                </div>
+                @if (Auth::user()->role == 'admin')
+                    <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                        <x-nav-link :href="route('admin.departments.index')" :active="request()->routeIs('admin.departments.*')">
+                            {{ __('Departments') }}
+                        </x-nav-link>
+                    </div>
+                    <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                        <x-nav-link :href="route('admin.employees.index')" :active="request()->routeIs('admin.employees.*')">
+                            {{ __('Employees') }}
+                        </x-nav-link>
+                    </div>
+                    <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                        <x-nav-link :href="route('admin.kpis.index')" :active="request()->routeIs('admin.kpis.*')">
+                            {{ __('KPIs') }}
+                        </x-nav-link>
+                    </div>
+                @endif
+                @if (Auth::user()->role == 'user')
+                    <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                        <x-nav-link :href="route('user.viewkpis')" :active="(request()->routeIs('user.viewkpis') || request()->routeIs('user.create-report'))">
+                            {{ __('View KPIs') }}
+                        </x-nav-link>
+                    </div>
+                @endif
             </div>
 
             <!-- Settings Dropdown -->

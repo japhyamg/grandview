@@ -90,7 +90,7 @@ class DepartmentController extends Controller
                 // If validation fails return with error
                 return back()->withErrors($validator)->withInput();
             }else{
-                // Create Department
+                // Update Department
                 $department->update([
                     'name' => $request->name,
                     'slug' => Str::slug($request->name)

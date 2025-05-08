@@ -25,7 +25,7 @@ Submit performance reports
     1. Open your terminal or command prompt.
     2. Navigate to your desired project directory.
     3. Use the git clone command to clone the repository. 
-        git clone <repository_url> <folder_name>
+        git clone https://github.com/japhyamg/grandview.git
 
 # Install Composer Dependencies
     1. Laravel uses Composer for PHP dependency management.
